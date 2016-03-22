@@ -32,7 +32,7 @@ app.service("YelpService", function($q, $http) {
 			$http.get('https://codecraftpro.com/api/samples/v1/coffee/', {params: params})
 				.success(function (data) {
 					self.isLoading = false;
-					// console.log(data);
+					console.log(data);
 					if (data.businesses.length === 0) {
 						self.hasMore = false;
 					} else {
