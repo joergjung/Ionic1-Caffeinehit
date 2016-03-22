@@ -6,7 +6,7 @@ app.controller("YelpController", function($scope, YelpService) {
     $scope.doRefresh = function() {
         if (!$scope.yelp.isLoading) {
             $scope.yelp.refresh().then(function() {
-                // when refreshed then broadcast this event to hide spinner icon
+                // when refreshed then broadcast this event hide spinner icon
                 $scope.$broadcast('scroll.refreshComplete');
             });
         }        
