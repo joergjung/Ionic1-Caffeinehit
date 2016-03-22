@@ -9,8 +9,6 @@ app.service("YelpService", function($q, $http) {
         // Hamburg
 		'lat': 53.549518,
 		'lon': 9.962401,
-		// 'lat': 51.544440,
-		// 'lon': -0.022974,
 		'refresh': function() {
 			self.page = 1;
 			self.isLoading = false;
@@ -34,8 +32,8 @@ app.service("YelpService", function($q, $http) {
 			$http.get('https://codecraftpro.com/api/samples/v1/coffee/', {params: params})
 				.success(function (data) {
 					self.isLoading = false;
-					console.log(data);
-					if (data.businesses.length == 0) {
+					// console.log(data);
+					if (data.businesses.length === 0) {
 						self.hasMore = false;
 					} else {
 						angular.forEach(data.businesses, function(business) {
