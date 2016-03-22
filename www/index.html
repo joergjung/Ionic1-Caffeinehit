@@ -2,14 +2,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport"
-	      content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 	<title></title>
 
-	<link href="lib/ionic/css/ionic.css"
-	      rel="stylesheet">
-	<link href="css/style.css"
-	      rel="stylesheet">
+	<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
 
 	<!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
 	<link href="css/ionic.app.css" rel="stylesheet">
@@ -32,31 +29,27 @@
     <ion-pane ng-controller="YelpController">
         <ion-header-bar class="bar-stable">
             <h1 class="title">
-                <img src='img/coffee-bean-icon.png' />
+                <img src="img/coffee-bean-icon.png">
                 <span>CaffeineHit</span>
             </h1>
         </ion-header-bar>
         <ion-content>
-            <ion-refresher
-                pulling-text="Refresh..."
-                on-refresh="doRefresh()">
+            <ion-refresher pulling-text="Refresh..." on-refresh="doRefresh()">
             </ion-refresher>
             <ion-list>
-                <ion-item ng-repeat="cafe in yelp.results" 
-                    class="item-thumbnail-left"
-                    ng-click="openMap(cafe)">
+                <ion-item ng-repeat="cafe in yelp.results" class="item-thumbnail-left" ng-click="openMap(cafe)">
                     <img ng-src="{{ cafe.image_url }}">
                     <h2>{{ cafe.name }}</h2>
                     <p>
                         <span>
                             <i class="ion ion-ios-navigate"></i>
-                            {{ cafe.distance | number:"0" }}m
+                            {{ cafe.distance | number:&quot;0&quot; }}m
                         </span>
                     </p>
                     <p>
                         <i class="ion ion-ios-location"></i>
                         <!--use custom join filter-->
-                        {{ cafe.location.display_address | join:", " }}
+                        {{ cafe.location.display_address | join:&quot;, &quot; }}
                         <!--other possible way is using javascript join-->
                         <!--{{ cafe.location.display_address.join(", ") }}-->
                     </p>
@@ -70,17 +63,12 @@
                             {{ cafe.review_count }}
                         </span>
                     </p>
-                    <ion-option-button
-                        class="button-positive"
-                        ng-click="getDirections(cafe)">
-                        <i class="ion ion-map"></i>&nbsp;Directions
+                    <ion-option-button class="button-positive" ng-click="getDirections(cafe)">
+                        <i class="ion ion-map"></i>&#xA0;Directions
                     </ion-option-button>
                 </ion-item>
             </ion-list>
-            <ion-infinite-scroll
-                ng-if="yelp.hasMore"
-                immediate-check="false"
-                on-infinite="loadMore()">
+            <ion-infinite-scroll ng-if="yelp.hasMore" immediate-check="false" on-infinite="loadMore()">
             </ion-infinite-scroll>
         </ion-content>
     </ion-pane>
