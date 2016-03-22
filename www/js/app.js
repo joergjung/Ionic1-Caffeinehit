@@ -5,8 +5,8 @@ var app = angular.module('caffeinehit', [
 	'caffeinehit.filters'
 ]);
 
-app.run(function ($ionicPlatform) {
-	$ionicPlatform.ready(function () {
+app.run(function($ionicPlatform) {
+	$ionicPlatform.ready(function() {
 		// Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
 		// for form inputs)
 		if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
@@ -21,6 +21,6 @@ app.run(function ($ionicPlatform) {
 	});
 });
 
-app.config(function ($httpProvider) {
-	$httpProvider.defaults.headers.common['Authorization'] = 'Token <REPLACE_WITH_YOUR_TOKEN>';
+app.config(function($httpProvider) {
+	$httpProvider.defaults.headers.common['Authorization'] = 'Token daa16f054ee9bf9a7f26b0a2f070b4ed5a77a4dd';
 });
